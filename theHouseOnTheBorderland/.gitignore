@@ -1,0 +1,11 @@
+# Godot engine cache — regenerated on project open
+.godot/
+
+# Export presets contain absolute local paths
+export_presets.cfg
+
+# Android export artifacts
+/android/
+
+# Compiled builds
+exports/

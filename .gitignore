@@ -1,0 +1,83 @@
+# =============================================================================
+# Godot
+# =============================================================================
+
+# Engine-generated cache — never commit
+.godot/
+
+# Export presets contain absolute paths and machine-specific settings
+export_presets.cfg
+
+# Mono/C# build artifacts (not used, but included for safety)
+.mono/
+data_*/
+mono_crash.*.json
+
+# =============================================================================
+# Exported builds
+# =============================================================================
+
+# Compiled game builds go in exports/ but are not tracked in source control.
+# Distribute via Steam / itch.io / GitHub Releases instead.
+exports/
+
+# =============================================================================
+# Assets — large binaries
+# =============================================================================
+
+# Raw Blender source files (large; use Git LFS or keep out of repo)
+*.blend1
+*.blend2
+
+# Exported FBX (use .glb instead — smaller, lossless, Godot-native)
+*.fbx
+
+# Uncompressed audio sources (commit only the compressed versions)
+*.wav
+*.aif
+*.aiff
+
+# Photoshop / high-res source images (commit only the exported PNGs/SVGs)
+*.psd
+*.psb
+
+# Rich Text Format — source texts should be plain .txt
+*.rtf
+
+# =============================================================================
+# macOS
+# =============================================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# =============================================================================
+# Windows
+# =============================================================================
+
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =============================================================================
+# Linux
+# =============================================================================
+
+*~
+
+# =============================================================================
+# Local AI tooling
+# =============================================================================
+
+CLAUDE.md
+
+# =============================================================================
+# Editors
+# =============================================================================
+
+.vscode/
+.idea/
+*.swp
+*.swo

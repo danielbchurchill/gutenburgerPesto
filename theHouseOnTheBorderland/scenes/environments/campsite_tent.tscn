@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3]
+
+; Campsite at night — warm campfire amber against deep darkness.
+; Replace Ground and add tent geometry, fire, bedrolls from Blender.
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 1
+background_color = Color(0.01, 0.01, 0.03, 1)
+fog_enabled = true
+fog_light_color = Color(0.04, 0.02, 0.01, 1)
+fog_density = 0.015
+ambient_light/color = Color(0.35, 0.18, 0.05, 1)
+ambient_light/energy = 0.6
+
+[sub_resource type="PlaneMesh" id="Plane_1"]
+size = Vector2(40.0, 40.0)
+
+[sub_resource type="StandardMaterial3D" id="Mat_1"]
+albedo_color = Color(0.1, 0.08, 0.06, 1)
+roughness = 1.0
+metallic_specular = 0.0
+
+[node name="CampsiteTent" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env_1")
+
+[node name="CampfireLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -1)
+light_color = Color(1.0, 0.45, 0.1, 1)
+light_energy = 3.0
+omni_range = 8.0
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("Plane_1")
+surface_material_override/0 = SubResource("Mat_1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

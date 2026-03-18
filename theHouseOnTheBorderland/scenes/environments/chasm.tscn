@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3]
+
+; The great chasm — open grey sky, heavy spray mist rising from below.
+; Replace Ground with rocky promontory mesh. The void below is the centrepiece.
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 1
+background_color = Color(0.45, 0.48, 0.52, 1)
+fog_enabled = true
+fog_light_color = Color(0.6, 0.62, 0.65, 1)
+fog_density = 0.035
+ambient_light/color = Color(0.4, 0.42, 0.46, 1)
+ambient_light/energy = 0.8
+
+[sub_resource type="PlaneMesh" id="Plane_1"]
+size = Vector2(40.0, 40.0)
+
+[sub_resource type="StandardMaterial3D" id="Mat_1"]
+albedo_color = Color(0.35, 0.33, 0.3, 1)
+roughness = 1.0
+metallic_specular = 0.0
+
+[node name="Chasm" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707, 0.707, 0, -0.707, 0.707, 0, 10, 0)
+light_color = Color(0.75, 0.78, 0.85, 1)
+light_energy = 0.7
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("Plane_1")
+surface_material_override/0 = SubResource("Mat_1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

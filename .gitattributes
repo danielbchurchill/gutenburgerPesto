@@ -1,0 +1,22 @@
+# Normalize line endings for all text files
+* text=auto eol=lf
+
+# Godot scenes and resources
+*.tscn text
+*.tres text
+*.gd text
+*.gdshader text
+*.import text
+
+# Treat binary asset types as binary (no diff, no merge)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text
+*.glb binary
+*.ttf binary
+*.otf binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
