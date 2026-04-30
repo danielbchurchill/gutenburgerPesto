@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dfjierdk86xvg"]
+
+[ext_resource type="PackedScene" uid="uid://fgu51si05s67" path="res://assets/models/rock_small.glb" id="1_l5c2b"]
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 1
+background_color = Color(0.08, 0.07, 0.06, 1)
+
+[node name="TestPipeline" type="Node3D" unique_id=102990357]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1690324885]
+environment = SubResource("Env_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=736189529]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 4, 3)
+light_color = Color(0.95, 0.9, 0.8, 1)
+light_energy = 1.8
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=905945012]
+transform = Transform3D(1, 0, 0, 0, 0.819, 0.574, 0, -0.574, 0.819, 0, 1.2, 2.8)
+fov = 60.0
+
+[node name="rock_small2" parent="." unique_id=709855371 instance=ExtResource("1_l5c2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6323484, 0, -0.0025718212)
